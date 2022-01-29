@@ -11,6 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public Vector2 StartingPos;
     public Vector2 Dir;
     public float ProjectileSpeed;
+    public float Damage = 0.0f;
 
     private Rigidbody2D RB;
     private SpriteRenderer SR;
@@ -26,7 +27,6 @@ public class ProjectileBehaviour : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         RB.velocity = Vector2.zero;
         SR = GetComponent<SpriteRenderer>();
-        this.tag = "PlayerProjectile";
     }
     public void MoveProjectile()
     {
@@ -44,7 +44,9 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if(collision.rigidbody.tag != "Player" && collision.rigidbody.tag != "PlayerProjectile")
         {
+            ResetExistTime();
             transform.gameObject.SetActive(false);
+            collision.transform.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 

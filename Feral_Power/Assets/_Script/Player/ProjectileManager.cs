@@ -73,6 +73,7 @@ public class ProjectileManager : MonoBehaviour
             ProjectileBehaviour p = TempProjectile.GetComponent<ProjectileBehaviour>();
             if (p != null)
             {
+                p.ResetExistTime();
                 p.StartingPos = StartPos;
                 p.ProjectileSpeed = 20;
                 p.Dir = Dir;
@@ -98,6 +99,7 @@ public class ProjectileManager : MonoBehaviour
                 p.StartingPos = StartPos;
                 p.ProjectileSpeed = 20;
                 p.Dir = Dir;
+                p.ResetExistTime();
                 return 0;
             }
 

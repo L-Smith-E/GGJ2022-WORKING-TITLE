@@ -147,5 +147,5 @@ MonoBehaviour:
   StartingPos: {x: 0, y: 0}
   Dir: {x: 0, y: 0}
   ProjectileSpeed: 0
-  RB: {fileID: 0}
-  SR: {fileID: 0}
+  Damage: 0
+  ExistTimer: 0
