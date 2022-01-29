@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3511729105401128376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.3368425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986276, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986277, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_Name
+      value: TestDummyWithAi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986279, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: IFrameDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295724033833986297, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+--- !u!1 &802011527646137693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4295724033833986277, guid: dc32f68c66c2ced4081a882df8579e9a, type: 3}
+  m_PrefabInstance: {fileID: 3511729105401128376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &496695378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802011527646137693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f5971f4aaf6e042880061b66a65c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Projectile: {fileID: 1424831483991020237, guid: f7e72ad65b3695a4a9c20bfcfa58b24f, type: 3}
+  speed: 200
+  nextWaypointDistance: 3
+--- !u!114 &496695379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802011527646137693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
