@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 
 public class GameManager : MonoBehaviour
 { 
@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     #region singleton
     private static GameManager instance = null;
-    
+
 
     private void Awake()
     {
@@ -39,20 +39,31 @@ public class GameManager : MonoBehaviour
     #endregion
     public void ChangeScene(string sceneName)
     {
+        ResetAllVar();
         SceneManager.LoadScene(sceneName);
     }
 
-   
+    private static bool Day = true;
 
-    // Start is called before the first frame update
-    void Start()
+    public static GameObject Player = null;
+    private static void ResetAllVar()
     {
-       
+        Day = true;
+        Player = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void TimeChange()
     {
-        
+        Day = !Day;
+    }
+
+    public static bool IsNight()
+    {
+        return !Day;
+    }
+
+    public static bool IsDay()
+    {
+        return Day;
     }
 }

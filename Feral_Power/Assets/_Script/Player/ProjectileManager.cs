@@ -31,7 +31,8 @@ public class ProjectileManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        foreach(ProjectileBehaviour p in Projectile)
+        IsNight = GameManager.IsNight();
+        foreach (ProjectileBehaviour p in Projectile)
         {
             if (p.isActiveAndEnabled)
             {
