@@ -7,6 +7,10 @@ public class EnemyAI : MonoBehaviour
 {
 
     public Transform target;
+    public GameObject Projectile;
+    private float projectileTimer;
+    private float firingTime = 3.0f;
+    private float cooldownTime = 3.0f;
 
     public float speed = 200f;
 
@@ -24,10 +28,11 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        projectileTimer = cooldownTime;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
-        
 
+        
     }
 
     void UpdatePath()
@@ -67,6 +72,9 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector3 dir = target.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
         Vector2 force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
 
@@ -76,5 +84,26 @@ public class EnemyAI : MonoBehaviour
         {
             currentWaypoint++;
         }
+
+        projectileTimer -= 1.0f * Time.deltaTime;
+
+        if (projectileTimer <= 0.0f)
+        {
+            firingTime -= 1.0f;
+            shootProjectile();
+            if(firingTime <= 0.0f)
+            {
+                projectileTimer = cooldownTime;
+                firingTime = 3.0f;
+            }
+            
+        }
+    }
+
+    void shootProjectile()
+    {
+        GameObject spawnedBullet = Instantiate(Projectile);
+        spawnedBullet.transform.position = transform.position;
+        spawnedBullet.transform.rotation = transform.rotation;
     }
 }
