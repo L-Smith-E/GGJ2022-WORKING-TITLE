@@ -246,7 +246,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 446
     mosaicPosition: {x: 0, y: 0}
   - name: Walk_0
@@ -281,7 +281,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 461
     mosaicPosition: {x: 0, y: 0}
   - name: Dash_0
