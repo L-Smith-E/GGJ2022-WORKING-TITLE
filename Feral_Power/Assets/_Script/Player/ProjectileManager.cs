@@ -5,19 +5,26 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     public GameObject ProjectilePrefab;
+    public int ProjectileCount;
 
     [SerializeField]
     private List<ProjectileBehaviour> Projectile;
 
     [SerializeField]
     private bool IsNight = false;
-    public float ProjectileRange = 100.0f;
 
     private Transform Self;
+
+
+    public float ExistTime = 10;
+
+    //public bool DisableBaseOnRange = false;
+    //public float ProjectileRange = 100.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        CreateBullets();
         Self = GetComponent<Transform>();
     }
 
@@ -26,22 +33,31 @@ public class ProjectileManager : MonoBehaviour
     {
         foreach(ProjectileBehaviour p in Projectile)
         {
-            if (IsNight)
+            if (p.isActiveAndEnabled)
             {
-                p.MoveProjectile();
+                if (IsNight)
+                {
+                    p.MoveProjectile();
 
-                Vector2 currPos = p.transform.position;
-                Vector2 heading = p.StartingPos - currPos;
-                float distance = heading.magnitude;
+                    //Vector2 currPos = p.transform.position;
+                    //Vector2 heading = p.StartingPos - currPos;
+                    //float distance = heading.magnitude;
 
-                if(distance >= ProjectileRange)
+                    //if (distance >= ProjectileRange)
+                    //{
+                    //    p.transform.gameObject.SetActive(false);
+                    //}
+                }
+                else
+                {
+                    p.StopProjectile();
+                }
+
+                if(p.GetExistTime() >= ExistTime)
                 {
                     p.transform.gameObject.SetActive(false);
+                    p.ResetExistTime();
                 }
-            }
-            else
-            {
-                p.StopProjectile();
             }
         }
     }
@@ -92,5 +108,20 @@ public class ProjectileManager : MonoBehaviour
     {
         Debug.Log("THE WORLD");
         IsNight = State;
+    }
+
+    private void CreateBullets()
+    {
+        for(int i = 0; i < ProjectileCount; i++)
+        {
+            var TempProjectile = Instantiate(ProjectilePrefab);
+            TempProjectile.transform.SetParent(this.transform);
+            ProjectileBehaviour p = TempProjectile.GetComponent<ProjectileBehaviour>();
+            if (p != null)
+            {
+                Projectile.Add(p);
+                TempProjectile.SetActive(false);
+            }
+        }
     }
 }

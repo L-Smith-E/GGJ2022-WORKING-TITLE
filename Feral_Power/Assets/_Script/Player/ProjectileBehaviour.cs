@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class ProjectileBehaviour : MonoBehaviour
 {
 
@@ -10,26 +12,33 @@ public class ProjectileBehaviour : MonoBehaviour
     public Vector2 Dir;
     public float ProjectileSpeed;
 
-    [SerializeField]
     private Rigidbody2D RB;
+    private SpriteRenderer SR;
 
     [SerializeField]
-    private SpriteRenderer SR;
+    private float ExistTimer;
+
+
     // Start is called before the first frame update
     void Start()
     {
         Physics2D.IgnoreLayerCollision(6,3, true);
         RB = GetComponent<Rigidbody2D>();
+        RB.velocity = Vector2.zero;
         SR = GetComponent<SpriteRenderer>();
+        this.tag = "PlayerProjectile";
     }
     public void MoveProjectile()
     {
-        RB.velocity = Dir * ProjectileSpeed;
+        ExistTimer += Time.fixedDeltaTime;
+        if (RB)
+            RB.velocity = Dir * ProjectileSpeed;
     }
-
     public void StopProjectile()
     {
-        RB.velocity = Vector2.zero;
+        ExistTimer += Time.fixedDeltaTime;
+        if (RB)
+            RB.velocity = Vector2.zero;
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,5 +46,15 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             transform.gameObject.SetActive(false);
         }
+    }
+
+    public float GetExistTime()
+    {
+        return ExistTimer;
+    }
+
+    public void ResetExistTime()
+    {
+        ExistTimer = 0;
     }
 }

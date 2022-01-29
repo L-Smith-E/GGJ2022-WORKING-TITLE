@@ -7,18 +7,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public ProjectileManager PlayerProjectileManager;
-
-    [SerializeField]
     private Rigidbody2D RB;
-
-    [SerializeField]
     private SpriteRenderer SR;
 
     [SerializeField]
     private bool IsNight = false;
-
+    
     [Header("Movement")]
     public float MoveSpeed;
+
     [SerializeField]
     private float Horizontal;
 
@@ -54,7 +51,7 @@ public class PlayerController : MonoBehaviour
             Vector2 dir = heading / distance;
 
             if(PlayerProjectileManager != null)
-                PlayerProjectileManager.SpawnProjectile((RB.position + (dir)), dir);
+                PlayerProjectileManager.RecycleProjectile((RB.position + (dir)), dir);
         }
 
         if(Input.GetKeyDown(KeyCode.F))
