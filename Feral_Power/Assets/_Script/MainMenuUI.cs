@@ -5,8 +5,6 @@ using UnityEngine;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField]
-    GameObject optionPanel;
-    [SerializeField]
     GameObject HowToPlayPanel;
     [SerializeField]
     GameObject CreditPanel;
@@ -15,7 +13,14 @@ public class MainMenuUI : MonoBehaviour
 
     public void Awake()
     {
-        MainPanel.SetActive(true);
+        
+    }
+
+    public void Start()
+    {
+       MainPanel.SetActive(true);
+        HowToPlayPanel.SetActive(false);
+        CreditPanel.SetActive(false);
     }
     public void StartButton()
     {
@@ -25,38 +30,43 @@ public class MainMenuUI : MonoBehaviour
     {
         MainPanel.SetActive(true);
     }
-    public void OptionWindowOpen()
-    {
-        optionPanel.SetActive(true);
-    }
-    public void OptionWindowClose()
-    {
-        optionPanel.SetActive(false);
-    }
+    //public void OptionWindowOpen()
+    //{
+    //    optionPanel.SetActive(true);
+    //}
+    //public void OptionWindowClose()
+    //{
+    //    optionPanel.SetActive(false);
+    //}
     public void HowToWindowOpen()
     {
         HowToPlayPanel.SetActive(true);
+        MainPanel.SetActive(false);
     }
     public void HowToWindowClose()
     {
         HowToPlayPanel.SetActive(false);
+        MainPanel.SetActive(true);
     }
     public void CreditWindowOpen()
     {
         CreditPanel.SetActive(true);
+        MainPanel.SetActive(false);
     }
     public void CreditWindowClose()
     {
         CreditPanel.SetActive(false);
+        MainPanel.SetActive(true);
     }
-    //public void LoadButton()
-    //{
-    //    //SaveManager.Instance.Load();
-    //    GameManager.Instance.ChangeScene("Loading");
-    //}
-
+    public void LoadButton()
+    {
+        //SaveManager.Instance.Load();
+        GameManager.Instance.ChangeScene("Loading");
+    }
+ 
     public void QuitButton()
     {
         Application.Quit();
+        Debug.Log("Clicked");
     }
 }

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
  
 
 public class GameManager : MonoBehaviour
-{
+{ 
+    public static bool day = true;
+
     #region singleton
     private static GameManager instance = null;
     
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public static bool day = true;
+   
 
     // Start is called before the first frame update
     void Start()
