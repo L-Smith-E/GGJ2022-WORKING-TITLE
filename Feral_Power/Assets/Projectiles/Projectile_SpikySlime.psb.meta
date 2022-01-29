@@ -91,7 +91,29 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: SpikySlime
+  - name: SpikySlime_Blue
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 550
+      width: 532
+      height: 520
+    spriteID: f193f797f7cf87a479fba0f943857326
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -230, y: 70}
+  - name: SpikySlime_Red
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,7 +124,7 @@ ScriptedImporter:
       y: 4
       width: 532
       height: 538
-    spriteID: 89138e24b58ced84d90d31f6738ec8b5
+    spriteID: ac25c49d5871c9441ba32608efbe0175
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,33 +134,69 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -230, y: -237}
+    uvTransform: {x: 4, y: -15}
+  - name: SpikySlime_Green
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1078
+      width: 500
+      height: 538
+    spriteID: 64a036d5c90d0c340bce830d6c007228
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -496, y: 1059}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 1024
-  importedTextureHeight: 1024
+  importedTextureHeight: 2048
   documentSize: {x: 1000, y: 1000}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 1024
-  textureActualHeight: 1024
+  textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: SpikySlime
-    spriteName: SpikySlime
+  - name: SpikySlime_Blue
+    spriteName: SpikySlime_Blue
     isGroup: 0
     parentIndex: -1
-    spriteID: 89138e24b58ced84d90d31f6738ec8b5
-    layerID: 524
+    spriteID: f193f797f7cf87a479fba0f943857326
+    layerID: 526
+    mosaicPosition: {x: 4, y: 550}
+  - name: SpikySlime_Red
+    spriteName: SpikySlime_Red
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ac25c49d5871c9441ba32608efbe0175
+    layerID: 525
     mosaicPosition: {x: 4, y: 4}
+  - name: SpikySlime_Green
+    spriteName: SpikySlime_Green
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 64a036d5c90d0c340bce830d6c007228
+    layerID: 524
+    mosaicPosition: {x: 4, y: 1078}
   characterData:
     bones: []
     parts: []
