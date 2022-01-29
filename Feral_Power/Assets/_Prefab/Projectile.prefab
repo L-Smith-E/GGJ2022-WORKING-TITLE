@@ -148,4 +148,8 @@ MonoBehaviour:
   Dir: {x: 0, y: 0}
   ProjectileSpeed: 0
   Damage: 0
+  IgnoreTagList:
+  - Player
+  - PlayerProjectile
+  IgnoreLayer: 03000000
   ExistTimer: 0

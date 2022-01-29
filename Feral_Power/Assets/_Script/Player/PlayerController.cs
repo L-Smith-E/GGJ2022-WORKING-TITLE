@@ -34,12 +34,13 @@ public class PlayerController : MonoBehaviour
         IsNight = false;
         RB = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
+
+        GameManager.Player = this.transform.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         DashTimer += Time.deltaTime;
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
@@ -56,8 +57,10 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.F))
         {
-            IsNight = !IsNight;
-            PlayerProjectileManager.DayNightCycle(IsNight);
+            //IsNight = !IsNight;
+            //PlayerProjectileManager.DayNightCycle(IsNight);
+
+            GameManager.TimeChange();
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && DashTimer >= DashCoolDownTime)
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        IsNight = GameManager.IsNight();
         RB.velocity = new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed);
 
         if (DashNextFrame)

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     public GameObject FllowObject;
-
+    
     // Update is called once per frame
     void Update()
     {

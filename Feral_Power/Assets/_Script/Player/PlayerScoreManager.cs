@@ -17,7 +17,7 @@ public class PlayerScoreManager : MonoBehaviour
 
     [Header("Score")]
     [SerializeField]
-    private Int64 CurrentScore;
+    public Int64 CurrentScore;
 
     [SerializeField]
     private long ScoreIncreaseOnHit;
