@@ -1,0 +1,433 @@
+fileFormatVersion: 2
+guid: ff5e802fa84904a4f82f1edb5780e428
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Idle_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1458
+      width: 207
+      height: 377
+    spriteID: 3f9243f772356434599302b12ec25639
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -219, y: -1667}
+  - name: Idle_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 4
+      width: 228
+      height: 362
+    spriteID: 7f8228c7a7e6da14db2bded7bf9af386
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -340, y: -3121}
+  - name: Idle_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 455
+      y: 4
+      width: 207
+      height: 372
+    spriteID: a1db8570555368a4294de0882619ef37
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -430, y: -3121}
+  - name: Walk_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 374
+      width: 207
+      height: 377
+    spriteID: 1d7732217e8512943907749df0cc0ce1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -2233}
+  - name: Walk_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 1529
+      width: 209
+      height: 371
+    spriteID: 01746843364a24c438c777898c02d89e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -285, y: -1071}
+  - name: Walk_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1066
+      width: 207
+      height: 384
+    spriteID: 797b1a8df8dce044097b3201d797f253
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -812, y: -1534}
+  - name: Dash_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 759
+      width: 207
+      height: 377
+    spriteID: f25cd6b4526be0b40a180e97f0c1375f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: -1307}
+  - name: Dash_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 565
+      width: 207
+      height: 493
+    spriteID: 4509d71e885dc344082fd4d0466190c6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -531, y: -1357}
+  - name: Dash_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 1144
+      width: 207
+      height: 377
+    spriteID: 1d6d4deb70f1e2d44989c59e5a5fe6f3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -639, y: -922}
+  - name: Dash_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 207
+      height: 553
+    spriteID: 3bec4a0dcc16f2a4fa2a4c5f39fa15cd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1166, y: -1960}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 6000, y: 6000}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Idle
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 296
+    mosaicPosition: {x: 0, y: 0}
+  - name: Idle_0
+    spriteName: Idle_0
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3f9243f772356434599302b12ec25639
+    layerID: 281
+    mosaicPosition: {x: 4, y: 1458}
+  - name: Idle_1
+    spriteName: Idle_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7f8228c7a7e6da14db2bded7bf9af386
+    layerID: 295
+    mosaicPosition: {x: 219, y: 4}
+  - name: Idle_2
+    spriteName: Idle_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a1db8570555368a4294de0882619ef37
+    layerID: 288
+    mosaicPosition: {x: 455, y: 4}
+  - name: Walk
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 319
+    mosaicPosition: {x: 0, y: 0}
+  - name: Walk_0
+    spriteName: Walk_0
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 1d7732217e8512943907749df0cc0ce1
+    layerID: 318
+    mosaicPosition: {x: 219, y: 374}
+  - name: Walk_1
+    spriteName: Walk_1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 01746843364a24c438c777898c02d89e
+    layerID: 311
+    mosaicPosition: {x: 219, y: 1529}
+  - name: Walk_2
+    spriteName: Walk_2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 797b1a8df8dce044097b3201d797f253
+    layerID: 304
+    mosaicPosition: {x: 4, y: 1066}
+  - name: Dash
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 345
+    mosaicPosition: {x: 0, y: 0}
+  - name: Dash_0
+    spriteName: Dash_0
+    isGroup: 0
+    parentIndex: 8
+    spriteID: f25cd6b4526be0b40a180e97f0c1375f
+    layerID: 327
+    mosaicPosition: {x: 219, y: 759}
+  - name: Dash_1
+    spriteName: Dash_1
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 4509d71e885dc344082fd4d0466190c6
+    layerID: 338
+    mosaicPosition: {x: 4, y: 565}
+  - name: Dash_2
+    spriteName: Dash_2
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 1d6d4deb70f1e2d44989c59e5a5fe6f3
+    layerID: 343
+    mosaicPosition: {x: 219, y: 1144}
+  - name: Dash_3
+    spriteName: Dash_3
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 3bec4a0dcc16f2a4fa2a4c5f39fa15cd
+    layerID: 344
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Player Animation_Back Texture
+  prefabAssetName: Player Animation_Back Prefab
+  spriteLibAssetName: Player Animation_Back Sprite Lib
+  secondarySpriteTextures: []
