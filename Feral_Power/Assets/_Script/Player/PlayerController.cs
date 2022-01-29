@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
             float distance = heading.magnitude;
             Vector2 dir = heading / distance;
 
-            if(PlayerProjectileManager != null)
+            if (PlayerProjectileManager != null)
                 PlayerProjectileManager.SpawnProjectile((RB.position + (dir)), dir);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             IsNight = !IsNight;
             PlayerProjectileManager.DayNightCycle(IsNight);

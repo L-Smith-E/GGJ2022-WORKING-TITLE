@@ -23,9 +23,9 @@ public class ProjectileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(ProjectileBehaviour p in Projectile)
+        foreach (ProjectileBehaviour p in Projectile)
         {
-            if(IsNight)
+            if (IsNight)
                 p.MoveProjectile();
         }
     }
@@ -37,7 +37,7 @@ public class ProjectileManager : MonoBehaviour
         TempProjectile.transform.position = StartPos;
         TempProjectile.transform.rotation = Quaternion.FromToRotation(transform.right, Dir) * transform.rotation; ;
         ProjectileBehaviour p = TempProjectile.GetComponent<ProjectileBehaviour>();
-        if(p != null)
+        if (p != null)
         {
             p.ProjectileSpeed = 20;
             p.Dir = Dir;
