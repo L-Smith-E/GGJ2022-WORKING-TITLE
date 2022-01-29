@@ -5,8 +5,8 @@ using UnityEngine;
 public class BossToad : MonoBehaviour
 {
     private GameObject _target;
-    public GameObject Projectile;
-    private float projectileTimer;
+    //public GameObject Projectile;
+    //private float projectileTimer;
 
 
     void Start()
@@ -20,20 +20,20 @@ public class BossToad : MonoBehaviour
         Vector3 dir = _target.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //transform.Translate(Vector3.right * Time.deltaTime * 3.0f);
+        transform.Translate(Vector3.right * Time.deltaTime * 3.0f);
 
-        if (projectileTimer <= 0.0f)
-        {
-            shootProjectile();
-        }
+        //if (projectileTimer <= 0.0f)
+        //{
+        //    shootProjectile();
+        //}
 
         
     }
 
     void shootProjectile()
     {
-        GameObject spawnedBullet = Instantiate(Projectile);
-        spawnedBullet.transform.position = transform.position;
-        spawnedBullet.transform.rotation = transform.rotation;
+        //GameObject spawnedBullet = Instantiate(Projectile);
+        //spawnedBullet.transform.position = transform.position;
+        //spawnedBullet.transform.rotation = transform.rotation;
     }
 }
