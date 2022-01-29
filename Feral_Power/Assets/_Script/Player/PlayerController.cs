@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         IsNight = false;
-        DashTimer = 3.0f;
         RB = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
     }
