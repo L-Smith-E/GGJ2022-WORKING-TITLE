@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
 
     private Seeker seeker;
     private Rigidbody2D rb;
-
+    private Animator m_animator;
 
 
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
         objectPool = ObjectPool.Instance;
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         //ProjectileManager = GameManager.GetEnemyProjectileManager();
-
+        m_animator = GetComponent<Animator>();
 
     }
 

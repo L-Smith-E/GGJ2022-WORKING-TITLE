@@ -24,7 +24,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void StartButton()
     {
-        GameManager.Instance.ChangeScene("GameScene");
+        GameManager.Instance.ChangeScene("Main Level");
     }
     public void MainPanelOpen()
     {
