@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
 
     public float burstRate = 1.0f;
 
-    private EnemyProjectileManager ProjectileManager;
+    
     private float projectileTimer;
     private float cooldownTime = 3.0f;
     private float fireTime = 2.0f;
@@ -46,7 +46,7 @@ public class EnemyAI : MonoBehaviour
         projectileTimer = cooldownTime;
         objectPool = ObjectPool.Instance;
         InvokeRepeating("UpdatePath", 0f, 0.5f);
-        ProjectileManager = GameManager.GetEnemyProjectileManager();
+        //ProjectileManager = GameManager.GetEnemyProjectileManager();
 
 
     }
@@ -128,8 +128,7 @@ public class EnemyAI : MonoBehaviour
 
     void shootProjectileDay()
     {
-        if (ProjectileManager != null)
-        {
+        
             float angleStep = (dayEndAngle - dayStartAngle) / amountOfBulletsDay;
             float angle = dayStartAngle;
 
@@ -141,18 +140,17 @@ public class EnemyAI : MonoBehaviour
                 Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
                 Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
 
-                //GameObject bullet = objectPool.SpawnFromPool("Day", spawner.position, spawner.rotation);
-                //bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
-                ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 0);
-                angle += angleStep;
+            GameObject bullet = objectPool.SpawnFromPool("Day", spawner.position, spawner.rotation);
+            bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
+            //ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 0);
+            angle += angleStep;
             }
-        }
+        
     }
 
     void shootProjectileNight()
     {
-        if (ProjectileManager != null)
-        {
+        
             for (int i = 0; i <= amountOfBulletsNight; i++)
             {
                 float bulletDirectionX = transform.position.x + Mathf.Sin((nightAngle * Mathf.PI) / 180.0f);
@@ -161,12 +159,12 @@ public class EnemyAI : MonoBehaviour
                 Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
                 Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
 
-                //GameObject bullet = objectPool.SpawnFromPool("Night", spawner.position, spawner.rotation);
-                //bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
-                ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 1);
-                nightAngle += 10.0f;
+            GameObject bullet = objectPool.SpawnFromPool("Night", spawner.position, spawner.rotation);
+            bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
+            //ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 1);
+            nightAngle += 10.0f;
             }
-        }
+        
     }
 
     IEnumerator burstFire(int TimesToShoot)
