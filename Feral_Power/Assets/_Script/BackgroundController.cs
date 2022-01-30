@@ -17,12 +17,7 @@ public class BackgroundController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            IsNight = !IsNight;
-        }
-
-        if(IsNight)
+        if (GameManager.IsNight())
         {
             // Night
             SR.color = Color.grey;
