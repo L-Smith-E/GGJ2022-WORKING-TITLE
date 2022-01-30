@@ -6,6 +6,7 @@ public class MoleSpawner : MonoBehaviour
 {
     public float spawnTimer = 0.0f;
     public GameObject[] Mole;
+    public bool battleStart = false;
 
     private float timer = 0.0f;
     private int randomInt = 0;
@@ -20,19 +21,30 @@ public class MoleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= spawnTimer && !stopSpawning)
+        if(TriggerGauntlet.startGauntlet == true)
         {
-            randomInt = Random.Range(0, Mole.Length);
-            GameObject spawnedMole = Instantiate(Mole[randomInt]);
-            spawnedMole.transform.position = transform.position;
-            timer = 0.0f;
+            battleStart = TriggerGauntlet.startGauntlet;
         }
-
-        if (UserHUD.timeUp == true)
+        
+        if (battleStart)
         {
-            stopSpawning = true;
+            timer += Time.deltaTime;
+
+            if (timer >= spawnTimer && !stopSpawning)
+            {
+                randomInt = Random.Range(0, Mole.Length);
+                GameObject spawnedMole = Instantiate(Mole[randomInt]);
+                spawnedMole.transform.position = transform.position;
+                timer = 0.0f;
+            }
+
+            if (UserHUD.timeUp == true)
+            {
+                stopSpawning = true;
+            }
         }
+            
+        
+        
     }
 }

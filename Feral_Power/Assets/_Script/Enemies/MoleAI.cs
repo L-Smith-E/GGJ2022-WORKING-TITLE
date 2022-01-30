@@ -13,7 +13,7 @@ public class MoleAI : MonoBehaviour
     public float nextWaypointDistance = 3f;
 
     public float burstRate;
-
+    public int numberOfBursts;
     public int amountOfBullets;
 
     public float StartAngle = 90.0f;
@@ -105,7 +105,7 @@ public class MoleAI : MonoBehaviour
 
         if (projectileTimer <= 0.0f && !shooting)
         {
-            StartCoroutine(burstFire(3));
+            StartCoroutine(burstFire(numberOfBursts));
             shooting = true;
         }
 
