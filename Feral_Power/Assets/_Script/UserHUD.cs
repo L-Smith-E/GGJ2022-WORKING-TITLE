@@ -11,7 +11,13 @@ public class UserHUD : MonoBehaviour
     public static bool timeUp = false;
     private float startTime = 10.0f;
     private float currentTime;
+
+    [Header("Score")]
+    public PlayerScoreManager ScoreManager;
+    public Text Score;
+    public Text Combo;
     
+
 
     // Start is called before the first frame update
     void Start()
