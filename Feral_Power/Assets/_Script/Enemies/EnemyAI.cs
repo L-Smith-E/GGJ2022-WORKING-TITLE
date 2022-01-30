@@ -15,8 +15,10 @@ public class EnemyAI : MonoBehaviour
 
     public float burstRate;
 
+
     private float projectileTimer;
     private float cooldownTime = 3.0f;
+    private float fireTime = 2.0f;
     private Path path;
     private int currentWaypoint = 0;
     private bool reachedEndOfPath = false;
@@ -101,16 +103,26 @@ public class EnemyAI : MonoBehaviour
 
         projectileTimer -= 1.0f * Time.deltaTime;
 
-        if (projectileTimer <= 0.0f && !shooting)
+        if (projectileTimer <= 0.0f && !shooting && GameManager.IsDay())
         {
             StartCoroutine(burstFire(3));
             shooting = true;
         }
 
-        //if (projectileTimer <= 0.0f)
-        //{
-        //    shootProjectileNight();
-        //}
+        if (projectileTimer <= 0.0f &&GameManager.IsNight())
+        {
+            fireTime -= 1 * Time.deltaTime;
+            if(fireTime >= 0.0f)
+            {
+                shootProjectileNight();
+            }
+            else
+            {
+                projectileTimer = cooldownTime;
+                fireTime = 2.0f;
+            }
+            
+        }
     }
 
     void shootProjectileDay()

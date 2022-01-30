@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     private Vector2 moveDirection;
-    public float moveSpeed;
+    public float dayMoveSpeed;
+    public float nightMoveSpeed;
 
     private void Start()
     {
@@ -14,7 +15,15 @@ public class EnemyProjectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+        if(GameManager.IsDay())
+        {
+            transform.Translate(moveDirection * dayMoveSpeed * Time.deltaTime);
+        }
+        else if (GameManager.IsNight())
+        {
+            transform.Translate(moveDirection * nightMoveSpeed * Time.deltaTime);
+        }
+        
     }
 
     public void SetMoveDirection(Vector2 direction)
