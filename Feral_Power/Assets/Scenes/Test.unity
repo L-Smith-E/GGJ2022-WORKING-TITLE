@@ -436,6 +436,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2395264220138297349, guid: cc9c381e66046f841befdda36fac602e, type: 3}
   m_PrefabInstance: {fileID: 1090343946}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &945686154
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945686153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3f308bf8a9a90f4993c95b059d4fd37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &945686157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2395264220138297345, guid: cc9c381e66046f841befdda36fac602e, type: 3}
@@ -507,6 +526,18 @@ PrefabInstance:
     - target: {fileID: 2395264220138297345, guid: cc9c381e66046f841befdda36fac602e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395264220138297346, guid: cc9c381e66046f841befdda36fac602e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3015008839343239143, guid: 98fde87dc8716f94b9510b1c29223ea7, type: 3}
+    - target: {fileID: 2395264220138297348, guid: cc9c381e66046f841befdda36fac602e, type: 3}
+      propertyPath: DashForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395264220138297348, guid: cc9c381e66046f841befdda36fac602e, type: 3}
+      propertyPath: MoveSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2395264220138297348, guid: cc9c381e66046f841befdda36fac602e, type: 3}
       propertyPath: PlayerProjectileManager
