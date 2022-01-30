@@ -50,6 +50,7 @@ public class ProjectileBehaviour : MonoBehaviour
             ResetExistTime();
             transform.gameObject.SetActive(false);
             collision.transform.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
+            this.SendMessageUpwards("HitEvent", null, SendMessageOptions.DontRequireReceiver);
             return;
         }
     }

@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
         return Day;
     }
 
+    
+
     public static EnemyProjectileManager GetEnemyProjectileManager()
     {
         return EnemiesProjectileManager;

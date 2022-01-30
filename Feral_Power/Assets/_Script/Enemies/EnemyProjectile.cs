@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectile : ProjectileBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
-    void Start()
-    {
-        foreach (int i in IgnoreLayer)
-            Physics2D.IgnoreLayerCollision(transform.gameObject.layer, i, true);
+    private Vector2 moveDirection;
+    public float dayMoveSpeed;
+    public float nightMoveSpeed;
 
+    private void Start()
+    {
 
-        RB = GetComponent<Rigidbody2D>();
-        RB.velocity = Vector2.zero;
-        SR = GetComponent<SpriteRenderer>();
     }
-    override public void MoveProjectile()
+
+    private void Update()
     {
-        ExistTimer += Time.fixedDeltaTime;
-        if (RB)
-            RB.velocity = Dir * ProjectileSpeed;
+        if (GameManager.IsDay())
+        {
+            transform.Translate(moveDirection * dayMoveSpeed * Time.deltaTime);
+        }
+        else if (GameManager.IsNight())
+        {
+            transform.Translate(moveDirection * nightMoveSpeed * Time.deltaTime);
+        }
+
     }
-    override public void StopProjectile()
+
+    public void SetMoveDirection(Vector2 direction)
     {
-        ExistTimer += Time.fixedDeltaTime;
-        if (RB)
-            RB.velocity = Vector2.zero;
+        moveDirection = direction;
     }
 }
