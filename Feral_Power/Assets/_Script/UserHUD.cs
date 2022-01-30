@@ -9,13 +9,9 @@ public class UserHUD : MonoBehaviour
     public GameObject moon;
     public Text objective;
     public static bool timeUp = false;
-    private float startTime = 10.0f;
+    private float startTime = 240.0f;
     private float currentTime;
-
-    [Header("Score")]
-    public PlayerScoreManager ScoreManager;
-    public Text Score;
-    public Text Combo;
+    private bool battleStart = false;
     
 
 
@@ -28,6 +24,11 @@ public class UserHUD : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (TriggerGauntlet.startGauntlet == true)
+        {
+            battleStart = TriggerGauntlet.startGauntlet;
+        }
+
         if (GameManager.IsDay())
         {
             sun.SetActive(true);
@@ -39,15 +40,19 @@ public class UserHUD : MonoBehaviour
             sun.SetActive(false);
         }
 
-        if (currentTime >= 0.0f)
+        if (currentTime >= 0.0f && battleStart == true)
         {
             currentTime -= Time.fixedDeltaTime;
             objective.text = "Current Objective\n" + "Survive for " + (int)currentTime + " seconds";
         }
-        else
+        else if (currentTime <= 0.0f)
         {
             timeUp = true;
             objective.text = "Current Objective\n" + "Defeat The BossToad";
+        }
+        else
+        {
+            objective.text = "Current Objective\n" + "Enter The Arena";
         }
 
         

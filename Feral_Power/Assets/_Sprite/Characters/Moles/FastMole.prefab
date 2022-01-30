@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5662913985925653134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 1255273234037274729}
   m_Father: {fileID: 7486952502710334164}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6004248435760091213, guid: 70a07bbddee7ea743893f88c2e6e5d7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -210,12 +210,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   spawner: {fileID: 0}
-  speed: 100
+  speed: 300
   nextWaypointDistance: 3
   burstRate: 10
-  amountOfBullets: 3
-  StartAngle: 180
-  EndAngle: 180
+  numberOfBursts: 2
+  amountOfBullets: 8
+  StartAngle: 0
+  EndAngle: 360
 --- !u!50 &7486952502969903178
 Rigidbody2D:
   serializedVersion: 4
