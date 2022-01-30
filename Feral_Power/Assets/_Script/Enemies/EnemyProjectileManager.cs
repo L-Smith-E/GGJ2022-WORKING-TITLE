@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileManager : MonoBehaviour
+public class EnemyProjectileManager : MonoBehaviour
 {
     public List<GameObject> ProjectilePrefab;
     public int ProjectileCount;
@@ -15,14 +15,13 @@ public class ProjectileManager : MonoBehaviour
     private Transform Self;
 
     public float ExistTime = 10;
+    // Start is called before the first frame update
 
     private void Awake()
     {
-        if(GameManager.PlayerProjectileManager == null)
-            GameManager.PlayerProjectileManager = this;
+        if(GameManager.EnemiesProjectileManager == null)
+            GameManager.EnemiesProjectileManager = this;
     }
-
-    // Start is called before the first frame update
     void Start()
     {
         CreateBullets();
@@ -37,16 +36,16 @@ public class ProjectileManager : MonoBehaviour
         {
             if (p.isActiveAndEnabled)
             {
-                if (IsNight)
-                {
+                //if (IsNight)
+                //{
                     p.MoveProjectile();
-                }
-                else
-                {
-                    p.StopProjectile();
-                }
+                //}
+                //else
+                //{
+                //    p.StopProjectile();
+                //}
 
-                if(p.GetExistTime() >= ExistTime)
+                if (p.GetExistTime() >= ExistTime)
                 {
                     p.transform.gameObject.SetActive(false);
                     p.ResetExistTime();
@@ -76,10 +75,17 @@ public class ProjectileManager : MonoBehaviour
     // Look for Deactived projectile and reactiving them
     // Return 0 if it reactive any projectile
     // Return 1 if no Deactived projectile found
-    public int RecycleProjectile(Vector2 StartPos, Vector2 Dir)
+    public int RecycleProjectile(Vector2 StartPos, Vector2 Dir, int I = 0)
     {
-        foreach (ProjectileBehaviour p in Projectile)
+        for (int i = 0; i < ProjectileCount; i++)
         {
+            if (i + (ProjectileCount * I) > Projectile.Count)
+            {
+                Debug.LogError("RecycleProjectile Error");
+                return -1;
+            }
+
+            ProjectileBehaviour p = Projectile[i + (ProjectileCount * I)];
             if (!p.isActiveAndEnabled)
             {
                 p.transform.gameObject.SetActive(true);
@@ -88,7 +94,6 @@ public class ProjectileManager : MonoBehaviour
                 p.transform.rotation = Quaternion.FromToRotation(transform.up, Dir) * transform.rotation;
 
                 p.StartingPos = StartPos;
-                p.ProjectileSpeed = 20;
                 p.Dir = Dir;
                 p.ResetExistTime();
                 return 0;
@@ -99,15 +104,18 @@ public class ProjectileManager : MonoBehaviour
     }
     private void CreateBullets()
     {
-        for(int i = 0; i < ProjectileCount; i++)
+        for (int i = 0; i < ProjectilePrefab.Count; i++)
         {
-            var TempProjectile = Instantiate(ProjectilePrefab[0]);
-            TempProjectile.transform.SetParent(this.transform);
-            ProjectileBehaviour p = TempProjectile.GetComponent<ProjectileBehaviour>();
-            if (p != null)
+            for (int i2 = 0; i2 < ProjectileCount; i2++)
             {
-                Projectile.Add(p);
-                TempProjectile.SetActive(false);
+                var TempProjectile = Instantiate(ProjectilePrefab[i]);
+                TempProjectile.transform.SetParent(this.transform);
+                ProjectileBehaviour p = TempProjectile.GetComponent<ProjectileBehaviour>();
+                if (p != null)
+                {
+                    Projectile.Add(p);
+                    TempProjectile.SetActive(false);
+                }
             }
         }
     }

@@ -431,6 +431,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &622573631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 802011527646137692, guid: fed6b28993b96f242b0c8ba5b5e7a6e9, type: 3}
+  m_PrefabInstance: {fileID: 802011527569159441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945686153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2395264220138297349, guid: cc9c381e66046f841befdda36fac602e, type: 3}
@@ -511,13 +516,64 @@ PrefabInstance:
     - target: {fileID: 2395264220138297348, guid: cc9c381e66046f841befdda36fac602e, type: 3}
       propertyPath: PlayerProjectileManager
       value: 
-      objectReference: {fileID: 1539211303}
+      objectReference: {fileID: 1143254548}
     - target: {fileID: 2395264220138297349, guid: cc9c381e66046f841befdda36fac602e, type: 3}
       propertyPath: m_Name
       value: PlayerTest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9c381e66046f841befdda36fac602e, type: 3}
+--- !u!1 &1143254545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143254547}
+  - component: {fileID: 1143254548}
+  m_Layer: 0
+  m_Name: EnemyProjectileManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1143254547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143254545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75621736, y: 1.3926142, z: -6.095697}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1143254548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143254545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad3323b78965c444ae9dad5f61e4cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab:
+  - {fileID: 3390405646756319923, guid: 1bfa6a999e44c434b902e2c0a7e01fd3, type: 3}
+  - {fileID: 4156835922720126174, guid: b61d0be22544bc14b983d180894d2d64, type: 3}
+  - {fileID: 3653664380139150181, guid: 69654dcaf09e50e4db57218a8c0f2acc, type: 3}
+  ProjectileCount: 100
+  Projectile: []
+  IsNight: 0
+  ExistTime: 10
 --- !u!1 &1167301891
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,12 +793,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539211302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 361566bb29654784eb74dce10a8e14b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 1309590563726812490, guid: 7a3e70ade629e004da64a442bb987702, type: 3}
+  ProjectilePrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ProjectileCount: 3
   Projectile: []
   IsNight: 0
@@ -773,8 +832,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 945686157}
     - target: {fileID: 496695378, guid: fed6b28993b96f242b0c8ba5b5e7a6e9, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 622573631}
+    - target: {fileID: 496695378, guid: fed6b28993b96f242b0c8ba5b5e7a6e9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 496695378, guid: fed6b28993b96f242b0c8ba5b5e7a6e9, type: 3}
       propertyPath: Projectile

@@ -13,9 +13,9 @@ public class EnemyAI : MonoBehaviour
 
     public float nextWaypointDistance = 3f;
 
-    public float burstRate;
+    public float burstRate = 1.0f;
 
-
+    private EnemyProjectileManager ProjectileManager;
     private float projectileTimer;
     private float cooldownTime = 3.0f;
     private float fireTime = 2.0f;
@@ -45,9 +45,10 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         projectileTimer = cooldownTime;
         objectPool = ObjectPool.Instance;
-        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        ProjectileManager = GameManager.GetEnemyProjectileManager();
 
-        
+
     }
 
     void UpdatePath()
@@ -101,7 +102,7 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        projectileTimer -= 1.0f * Time.deltaTime;
+        projectileTimer -= Time.fixedDeltaTime;
 
         if (projectileTimer <= 0.0f && !shooting && GameManager.IsDay())
         {
@@ -127,44 +128,50 @@ public class EnemyAI : MonoBehaviour
 
     void shootProjectileDay()
     {
-        float angleStep = (dayEndAngle - dayStartAngle) / amountOfBulletsDay;
-        float angle = dayStartAngle;
-
-        for (int i = 0; i < amountOfBulletsDay + 1; i++)
+        if (ProjectileManager != null)
         {
-            float bulletDirectionX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180.0f);
-            float bulletDirectionY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180.0f);
+            float angleStep = (dayEndAngle - dayStartAngle) / amountOfBulletsDay;
+            float angle = dayStartAngle;
 
-            Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
-            Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
+            for (int i = 0; i <= amountOfBulletsDay; i++)
+            {
+                float bulletDirectionX = transform.position.x + Mathf.Cos((angle * Mathf.PI) / 90.0f);
+                float bulletDirectionY = transform.position.y + Mathf.Sin((angle * Mathf.PI) / 90.0f);
 
-            GameObject bullet = objectPool.SpawnFromPool("Day", spawner.position, spawner.rotation);
-            bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
+                Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
+                Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
 
-            angle += angleStep;
+                //GameObject bullet = objectPool.SpawnFromPool("Day", spawner.position, spawner.rotation);
+                //bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
+                ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 0);
+                angle += angleStep;
+            }
         }
     }
 
     void shootProjectileNight()
     {
-        for (int i = 0; i < amountOfBulletsNight + 1; i++)
+        if (ProjectileManager != null)
         {
-            float bulletDirectionX = transform.position.x + Mathf.Sin((nightAngle * Mathf.PI) / 180.0f);
-            float bulletDirectionY = transform.position.y + Mathf.Cos((nightAngle * Mathf.PI) / 180.0f);
+            for (int i = 0; i <= amountOfBulletsNight; i++)
+            {
+                float bulletDirectionX = transform.position.x + Mathf.Sin((nightAngle * Mathf.PI) / 180.0f);
+                float bulletDirectionY = transform.position.y + Mathf.Cos((nightAngle * Mathf.PI) / 180.0f);
 
-            Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
-            Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
+                Vector3 bulletMoveVector = new Vector3(bulletDirectionX, bulletDirectionY, 0.0f);
+                Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
 
-            GameObject bullet = objectPool.SpawnFromPool("Night", spawner.position, spawner.rotation);
-            bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
-
-            nightAngle += 10.0f;
+                //GameObject bullet = objectPool.SpawnFromPool("Night", spawner.position, spawner.rotation);
+                //bullet.GetComponent<EnemyProjectile>().SetMoveDirection(bulletDirection);
+                ProjectileManager.RecycleProjectile(spawner.position, bulletDirection, 1);
+                nightAngle += 10.0f;
+            }
         }
     }
 
     IEnumerator burstFire(int TimesToShoot)
     {
-        for (int i = 0; i <TimesToShoot; i++)
+        for (int i = 0; i < TimesToShoot; i++)
         {
             shootProjectileDay();
 

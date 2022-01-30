@@ -14,12 +14,11 @@ public class ProjectileBehaviour : MonoBehaviour
     public List<string> IgnoreTagList;
     public List<int> IgnoreLayer;
 
-    private Rigidbody2D RB;
-    private SpriteRenderer SR;
+    protected Rigidbody2D RB;
+    protected SpriteRenderer SR;
 
     [SerializeField]
-    private float ExistTimer;
-
+    protected float ExistTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +31,13 @@ public class ProjectileBehaviour : MonoBehaviour
         RB.velocity = Vector2.zero;
         SR = GetComponent<SpriteRenderer>();
     }
-    public void MoveProjectile()
+    virtual public void MoveProjectile()
     {
         ExistTimer += Time.fixedDeltaTime;
         if (RB)
             RB.velocity = Dir * ProjectileSpeed;
     }
-    public void StopProjectile()
+    virtual public void StopProjectile()
     {
         ExistTimer += Time.fixedDeltaTime;
         if (RB)

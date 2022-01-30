@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerProjectile
+  - Enemy
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - UI
   - PlayerProjectile
   - Obstical
-  - 
-  - 
+  - EnemyProjectle
+  - Enemy
   - 
   - 
   - 
