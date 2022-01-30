@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 02f4b452a4134e841877d11b6987b639
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Logs
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 964
+      y: 3302
+      width: 353
+      height: 286
+    spriteID: 40257d275c382624f9b253e619d709c4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 577, y: 1999}
+  - name: Bush
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1453
+      y: 2486
+      width: 153
+      height: 232
+    spriteID: c74ab2b86832b4449b65c59f39d589ed
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1256, y: 1818}
+  - name: Pond
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3478
+      width: 907
+      height: 547
+    spriteID: 270aa5f6c8680b847b9f7f194dbdcc78
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -89, y: 2896}
+  - name: LilyPad_Brown
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 964
+      y: 2486
+      width: 481
+      height: 264
+    spriteID: ca8414a6a1cd4234b9d1bf2c9403e996
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 445, y: 323}
+  - name: LilyPad_DarkGreen
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 964
+      y: 2758
+      width: 481
+      height: 264
+    spriteID: 97a937eb29a0f8a488cd8dddcee5810c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 871, y: 754}
+  - name: LilyPad_Green
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 964
+      y: 3030
+      width: 481
+      height: 264
+    spriteID: a27233876ba9daf42b3c07350664bd58
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 871, y: 676}
+  - name: Tree
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2510
+      width: 698
+      height: 960
+    spriteID: e13a7a5c0f719524cba17bd37201ca27
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -147, y: 1654}
+  - name: Bar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1916
+      y: 4
+      width: 149
+      height: 2680
+    spriteID: 905a58b452c18894dbb798c9731d86ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1494, y: -53}
+  - name: Wall_Dirt
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 952
+      height: 2498
+    spriteID: 98fab918dda927445ad7c5b86d2adfea
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -20, y: -259}
+  - name: Wall_Stone
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 964
+      y: 4
+      width: 944
+      height: 2474
+    spriteID: f95729820c8dd144297e3ef25e636eea
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 940, y: -259}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 1000, y: 3000}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 4096
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Logs
+    spriteName: Logs
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 40257d275c382624f9b253e619d709c4
+    layerID: 737
+    mosaicPosition: {x: 964, y: 3302}
+  - name: Bush
+    spriteName: Bush
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c74ab2b86832b4449b65c59f39d589ed
+    layerID: 736
+    mosaicPosition: {x: 1453, y: 2486}
+  - name: Pond
+    spriteName: Pond
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 270aa5f6c8680b847b9f7f194dbdcc78
+    layerID: 735
+    mosaicPosition: {x: 4, y: 3478}
+  - name: LilyPad_Brown
+    spriteName: LilyPad_Brown
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ca8414a6a1cd4234b9d1bf2c9403e996
+    layerID: 734
+    mosaicPosition: {x: 964, y: 2486}
+  - name: LilyPad_DarkGreen
+    spriteName: LilyPad_DarkGreen
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 97a937eb29a0f8a488cd8dddcee5810c
+    layerID: 733
+    mosaicPosition: {x: 964, y: 2758}
+  - name: LilyPad_Green
+    spriteName: LilyPad_Green
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a27233876ba9daf42b3c07350664bd58
+    layerID: 732
+    mosaicPosition: {x: 964, y: 3030}
+  - name: Tree
+    spriteName: Tree
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e13a7a5c0f719524cba17bd37201ca27
+    layerID: 731
+    mosaicPosition: {x: 4, y: 2510}
+  - name: Bar
+    spriteName: Bar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 905a58b452c18894dbb798c9731d86ae
+    layerID: 727
+    mosaicPosition: {x: 1916, y: 4}
+  - name: Wall_Dirt
+    spriteName: Wall_Dirt
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 98fab918dda927445ad7c5b86d2adfea
+    layerID: 716
+    mosaicPosition: {x: 4, y: 4}
+  - name: Wall_Stone
+    spriteName: Wall_Stone
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f95729820c8dd144297e3ef25e636eea
+    layerID: 714
+    mosaicPosition: {x: 964, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Environmental Assets Texture
+  prefabAssetName: Environmental Assets Prefab
+  spriteLibAssetName: Environmental Assets Sprite Lib
+  secondarySpriteTextures: []
