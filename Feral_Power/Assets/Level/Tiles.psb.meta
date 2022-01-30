@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e8ba32c458925543bc4f6509b90cd79
+guid: c8da12ff301cd974b80069bf0f0cfab1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 948
       height: 820
-    spriteID: 7940a0e403ab76b40958bc03849bd2d6
+    spriteID: 6abe07b9e8ab2074a882e21e67ac72cc
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -124,7 +124,7 @@ ScriptedImporter:
       y: 832
       width: 948
       height: 820
-    spriteID: 7473f34a6d027774bb828a205325d8b1
+    spriteID: 4224866b4b38b9649a3d61fd431d6ce9
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -146,7 +146,7 @@ ScriptedImporter:
       y: 4
       width: 952
       height: 823
-    spriteID: 62652de6671e44e458e6d994b7c1f246
+    spriteID: 3dba5f649fd832549a6cecabe4bb4fcc
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
       y: 835
       width: 952
       height: 823
-    spriteID: 92285994d1d1bae49a2a98891601a64f
+    spriteID: 74c797028193f69489cf2fda8a3c0872
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -202,28 +202,28 @@ ScriptedImporter:
     spriteName: rackedStone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 7940a0e403ab76b40958bc03849bd2d6
+    spriteID: 6abe07b9e8ab2074a882e21e67ac72cc
     layerID: 908
     mosaicPosition: {x: 964, y: 4}
   - name: Stone_Tile
     spriteName: Stone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 7473f34a6d027774bb828a205325d8b1
+    spriteID: 4224866b4b38b9649a3d61fd431d6ce9
     layerID: 907
     mosaicPosition: {x: 964, y: 832}
   - name: Grass_Flower_Tile
     spriteName: Grass_Flower_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 62652de6671e44e458e6d994b7c1f246
+    spriteID: 3dba5f649fd832549a6cecabe4bb4fcc
     layerID: 906
     mosaicPosition: {x: 4, y: 4}
   - name: Grass_Tile
     spriteName: Grass_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 92285994d1d1bae49a2a98891601a64f
+    spriteID: 74c797028193f69489cf2fda8a3c0872
     layerID: 905
     mosaicPosition: {x: 4, y: 835}
   characterData:

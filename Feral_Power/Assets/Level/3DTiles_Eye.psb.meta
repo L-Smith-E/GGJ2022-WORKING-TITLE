@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 502dbc4037cc36f43a6a52058ac38bf0
+guid: 98a8920a04f59d74f88284f38b02e2d0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 958
       height: 885
-    spriteID: d597019dc6e56014c8ebc8d3ee59620c
+    spriteID: 8eb604c80a3d36c4fba332e6bf24b02a
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: 3D_Eye_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: d597019dc6e56014c8ebc8d3ee59620c
+    spriteID: 8eb604c80a3d36c4fba332e6bf24b02a
     layerID: 927
     mosaicPosition: {x: 4, y: 4}
   characterData:
