@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
 
-    public GameObject target;
+    public Transform target;
     public Transform spawner;
 
     public float speed = 200f;
@@ -41,8 +41,6 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-        spawner = transform.GetChild(0);
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         projectileTimer = cooldownTime;
@@ -55,9 +53,11 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
+        m_animator.SetInteger("AnimState", (int)EnemyAnimationType.WALK);
+
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+            seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
         
     }
@@ -91,7 +91,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector3 dir = target.transform.position - transform.position;
+        Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
         Vector2 force = direction * speed * Time.deltaTime;
@@ -108,6 +108,7 @@ public class EnemyAI : MonoBehaviour
 
         if (projectileTimer <= 0.0f && !shooting && GameManager.IsDay())
         {
+            m_animator.SetInteger("AnimState", (int)EnemyAnimationType.ATTACK);
             StartCoroutine(burstFire(3));
             shooting = true;
         }
@@ -117,6 +118,7 @@ public class EnemyAI : MonoBehaviour
             fireTime -= 1 * Time.deltaTime;
             if(fireTime >= 0.0f)
             {
+                m_animator.SetInteger("AnimState", (int)EnemyAnimationType.ATTACK_SIDE);
                 shootProjectileNight();
             }
             else
