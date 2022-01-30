@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &190910760
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4208794027794200676, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_Name
+      value: Player_Racoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 85.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -216.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9999966
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0026185503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208794027794200682, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3239.7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ed83e0769ae6fe4b94b76c576a28b16, type: 3}
 --- !u!1 &686483655
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +215,8 @@ Camera:
   m_GameObject: {fileID: 686483655}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -200,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686483655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 86.4, y: -208.9, z: -87.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -297,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1128473956
 GameObject:
@@ -357,7 +414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4060455840365275020, guid: b8dd6584a887d344fa676bf82a2ec4df, type: 3}
+  m_Sprite: {fileID: -5580214905432350791, guid: 72cb3103dcccaca4f81cfe3c042aed02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -380,7 +437,7 @@ Transform:
   m_LocalScale: {x: 6.0573378, y: 6.0573378, z: 6.0573378}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1128473959
 EdgeCollider2D:

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7948c6c05611cb64bb0986afc7431d46
+guid: f6b257a96bb5eff4bb2e17bfd6fbf753
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 2530
       height: 2427
-    spriteID: 8d9363dbf234e3e4081f58d5faad696d
+    spriteID: db3721578871039428ad35c00d14ea15
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: 3D_BrickWall_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 8d9363dbf234e3e4081f58d5faad696d
+    spriteID: db3721578871039428ad35c00d14ea15
     layerID: 741
     mosaicPosition: {x: 4, y: 4}
   characterData:

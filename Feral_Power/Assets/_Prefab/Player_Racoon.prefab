@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4208794027794200676}
   m_LocalRotation: {x: -0, y: 0, z: -0.0026185503, w: -0.9999966}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1773, y: 2.1773, z: 2.1773}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3015008839343239143, guid: 98fde87dc8716f94b9510b1c29223ea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +119,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e3f308bf8a9a90f4993c95b059d4fd37, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerProjectileManager: {fileID: 0}
   IsNight: 0
-  MoveSpeed: 0
+  MoveSpeed: 35
   Horizontal: 0
   Vertical: 0
-  DashForce: 100
+  DashForce: 30
   DashCoolDownTime: 1
