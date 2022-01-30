@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D RB;
     private SpriteRenderer SR;
     private Animator m_animator;
+    Vector2 moveDirection;
 
     [SerializeField]
     private bool IsNight = false;
-    
+
     [Header("Movement")]
     public float MoveSpeed;
 
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dash")]
     public float DashForce = 100.0f;
     public float DashCoolDownTime = 1.0f;
-    private  bool DashNextFrame;
+    private bool DashNextFrame;
     private float DashTimer;
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         DashTimer += Time.deltaTime;
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
+
         if (Input.GetMouseButtonDown(0) && !IsNight)
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -53,11 +55,29 @@ public class PlayerController : MonoBehaviour
             float distance = heading.magnitude;
             Vector2 dir = heading / distance;
 
-            if(PlayerProjectileManager != null)
+            if (PlayerProjectileManager != null)
                 PlayerProjectileManager.RecycleProjectile((RB.position + (dir)), dir);
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        //Movement
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector2.left * MoveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector2.down * MoveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * MoveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             //IsNight = !IsNight;
             //PlayerProjectileManager.DayNightCycle(IsNight);
@@ -65,112 +85,99 @@ public class PlayerController : MonoBehaviour
             GameManager.TimeChange();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && DashTimer >= DashCoolDownTime)
+        if (Input.GetKeyDown(KeyCode.Space) && DashTimer >= DashCoolDownTime)
         {
             DashNextFrame = true;
         }
-            
+
         //IDLE Animation
         //if (Horizontal == 0 && Vertical == 0 && DashForce == 0)
         //{
         //   //m_animator.SetInteger("AnimState", (int)PlayerAnimationType.IDLE);
         //}
 
-        if (Input.anyKeyDown)
-        {
         //No Vertical Input
-            if (Vertical == 0 && !DashNextFrame)
-            {
-            //Move Left
-                if (Horizontal < 0)
-                {
-                 
-                 m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
-                 Debug.Log("Walkleft");
-                }
-            //Move Right
-                if (Horizontal > 0)
-                {
-                    SR.flipX = true;
-                  m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
-                  Debug.Log("Walkright");
-                }
-
-                    //if (DashForce >= 0)
-                    //{
-
-                    //}
-                }
-            //Vertical input
-            if (Vertical > 0 || Vertical < 0 && !DashNextFrame)
-                Debug.Log("Vertical Input");
-            {
-            //Move Straight Down
-               if (Vertical < 0 && Horizontal == 0)
-                {
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN);
-                    Debug.Log("WalkDown");
-                    Debug.Log("Vertical Value:" + Vertical);
-                }
-                //Move Straight Up
-                if (Vertical > 0 && Horizontal == 0)
-                {
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP);
-                    Debug.Log("Walkup");
-                }
-                //Move Up Left
-                if (Vertical > 0 && Horizontal < 0)
-                {
-
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
-                    Debug.Log("Walkupleft");
-                }
-                //Move Up Right
-                if (Vertical > 0 && Horizontal > 0)
-                {
-                    SR.flipX = true;
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
-                    Debug.Log("Walkupright");
-                }
-                //Move Down Left
-                if (Vertical < 0 && Horizontal < 0 )
-                {
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
-                    Debug.Log("WalkDownleft");
-                }
-                //Move Down Right
-                if (Vertical < 0 && Horizontal > 0)
-                {
-                    SR.flipX = true;
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
-                }
-
-                //DASHES
-
-
-            }
+        //Move Left
+        if (Input.GetKey(KeyCode.A))
+        {
+            SR.flipX = false;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
+            Debug.Log("Walkleft");
         }
-        
+        //Move Right
+        if (Input.GetKey(KeyCode.D))
+        {
+            SR.flipX = true;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
+            Debug.Log("Walkright");
         }
+
+
+        //Move Straight Down
+        if (Input.GetKey(KeyCode.S))
+        {
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN);
+            Debug.Log("WalkDown");
+            Debug.Log("Vertical Value:" + Vertical);
+        }
+        //Move Straight Up
+        if (Input.GetKey(KeyCode.W))
+        {
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP);
+            Debug.Log("Walkup");
+        }
+        //Move Up Left
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        {
+            SR.flipX = false;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
+            Debug.Log("Walkupleft");
+        }
+        //Move Up Right
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        {
+            SR.flipX = true;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
+            Debug.Log("Walkupright");
+        }
+        //Move Down Left
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+            SR.flipX = true;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
+            Debug.Log("WalkDownleft");
+        }
+        //Move Down Right
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+            SR.flipX = false;
+            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
+            Debug.Log("WalkDownRight");
+        }
+
+        //DASHES
+    }
+
+
 
     private void FixedUpdate()
     {
         IsNight = GameManager.IsNight();
-        RB.AddForce(new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed));
+        //RB.AddForce(new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed));
+
 
         if (DashNextFrame)
         {
-            if(RB.bodyType == RigidbodyType2D.Kinematic)
+            if (RB.bodyType == RigidbodyType2D.Kinematic)
                 RB.velocity = new Vector2(Horizontal * DashForce, Vertical * DashForce);
-            else if(RB.bodyType == RigidbodyType2D.Dynamic)
-            RB.AddForce(new Vector2(Horizontal * DashForce, Vertical * DashForce), ForceMode2D.Impulse);
+            else if (RB.bodyType == RigidbodyType2D.Dynamic)
+                RB.AddForce(new Vector2(Horizontal * DashForce, Vertical * DashForce), ForceMode2D.Impulse);
             DashNextFrame = false;
             DashTimer = 0;
         }
-        
-       
-        }
+
     }
+}
 
     
 
