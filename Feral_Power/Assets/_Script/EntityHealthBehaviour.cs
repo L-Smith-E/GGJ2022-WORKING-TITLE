@@ -35,7 +35,9 @@ public class EntityHealthBehaviour : MonoBehaviour
         if (!IFrame)
         {
             CurrentHealth -= DamageTaken;
-            IFrame = true;
+
+            if(IFrameDuration != 0)
+                IFrame = true;
         }
     }
 }

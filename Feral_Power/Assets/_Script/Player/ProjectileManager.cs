@@ -76,7 +76,6 @@ public class ProjectileManager : MonoBehaviour
             {
                 p.ResetExistTime();
                 p.StartingPos = StartPos;
-                p.ProjectileSpeed = 20;
                 p.Dir = Dir;
                 Projectile.Add(p);
             }

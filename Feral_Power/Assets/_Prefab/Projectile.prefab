@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingPos: {x: 0, y: 0}
   Dir: {x: 0, y: 0}
-  ProjectileSpeed: 0
+  ProjectileSpeed: 20
   Damage: 1
   IgnoreTagList:
   - Player
