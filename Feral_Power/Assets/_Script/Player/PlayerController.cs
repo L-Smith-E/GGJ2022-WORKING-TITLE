@@ -56,26 +56,26 @@ public class PlayerController : MonoBehaviour
             Vector2 dir = heading / distance;
 
             if (PlayerProjectileManager != null)
-                PlayerProjectileManager.RecycleProjectile((RB.position + (dir)), dir);
+                PlayerProjectileManager.RecycleProjectile((RB.position + (dir * 1.5f)), dir);
         }
 
         //Movement
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector2.left * MoveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector2.down * MoveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector2.up * MoveSpeed * Time.deltaTime);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.Translate(Vector2.left * MoveSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.Translate(Vector2.down * MoveSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.Translate(Vector2.up * MoveSpeed * Time.deltaTime);
+        //}
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         //IDLE Animation
         //if (Horizontal == 0 && Vertical == 0 && DashForce == 0)
         //{
-        //   //m_animator.SetInteger("AnimState", (int)PlayerAnimationType.IDLE);
+        //    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.IDLE_UP);
         //}
 
         //No Vertical Input
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Walkleft");
         }
         //Move Right
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             SR.flipX = true;
             m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
@@ -121,11 +121,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Vertical Value:" + Vertical);
         }
         //Move Straight Up
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
             m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP);
             Debug.Log("Walkup");
         }
+
         //Move Up Left
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
@@ -134,12 +135,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Walkupleft");
         }
         //Move Up Right
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             SR.flipX = true;
             m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
             Debug.Log("Walkupright");
         }
+
         //Move Down Left
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
@@ -148,7 +150,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("WalkDownleft");
         }
         //Move Down Right
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             SR.flipX = false;
             m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
@@ -164,7 +166,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         IsNight = GameManager.IsNight();
-        //RB.AddForce(new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed));
+        RB.velocity = new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed);
 
 
         if (DashNextFrame)

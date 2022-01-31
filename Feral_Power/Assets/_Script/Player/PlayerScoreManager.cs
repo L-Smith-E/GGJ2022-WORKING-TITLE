@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-enum ScoreMultiplier
+public enum ScoreMultiplier
 {
     F = 0,
     E = 1,
@@ -27,7 +27,7 @@ public class PlayerScoreManager : MonoBehaviour
     [Header("Score Multiplier")]
 
     [SerializeField]
-    private ScoreMultiplier CurrentMultiplier;
+    public ScoreMultiplier CurrentMultiplier;
 
     [SerializeField]
     private int Combo;

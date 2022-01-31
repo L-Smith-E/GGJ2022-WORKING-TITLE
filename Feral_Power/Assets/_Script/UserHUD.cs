@@ -20,7 +20,10 @@ public class UserHUD : MonoBehaviour
 
     private bool battleStart = false;
 
-    
+    [Header("Player Info")]
+    public ProjectileManager PlayerProjectileManager;
+    public Text Health;
+    public Text ProjectileCount;
 
 
     // Start is called before the first frame update
@@ -37,16 +40,9 @@ public class UserHUD : MonoBehaviour
             battleStart = TriggerGauntlet.startGauntlet;
         }
 
-        if (GameManager.IsDay())
-        {
-            sun.SetActive(true);
-            moon.SetActive(false);
-        }
-        else if (GameManager.IsNight())
-        {
-            moon.SetActive(true);
-            sun.SetActive(false);
-        }
+        sun.SetActive(GameManager.IsDay());
+        moon.SetActive(GameManager.IsNight());
+
 
         if (currentTime >= 0.0f && battleStart == true)
         {
@@ -63,7 +59,32 @@ public class UserHUD : MonoBehaviour
             objective.text = "Current Objective\n" + "Enter The Arena";
         }
 
-        
+        if(ScoreManager != null)
+        {
+            Score.text = "Score:" + ScoreManager.CurrentScore.ToString();
 
+            Combo.text  = ScoreManager.CurrentMultiplier.ToString();
+        }
+
+
+        if (PlayerProjectileManager != null)
+        {
+            ProjectileCount.text = PlayerProjectileManager.ProjectileCount.ToString() + "/" + PlayerProjectileManager.InactiveProjectile;
+        }
+
+        if(GameManager.IsDay())
+        {
+            Score.color = Color.black;
+            Combo.color = Color.black;
+            Health.color = Color.black;
+            ProjectileCount.color = Color.blue;
+        }
+        else
+        {
+            Score.color = Color.white;
+            Combo.color = Color.white;
+            Health.color = Color.white;
+            ProjectileCount.color = Color.red;
+        }
     }
 }

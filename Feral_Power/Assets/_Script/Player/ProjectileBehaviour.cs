@@ -45,7 +45,7 @@ public class ProjectileBehaviour : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!IgnoreTagList.Contains(collision.rigidbody.tag))
+        if(!IgnoreTagList.Contains(collision.transform.tag))
         {
             ResetExistTime();
             transform.gameObject.SetActive(false);

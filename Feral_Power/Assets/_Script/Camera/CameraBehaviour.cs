@@ -7,7 +7,16 @@ public class CameraBehaviour : MonoBehaviour
 {
     public GameObject FllowObject;
     public List<GameObject> DockingPoints;
-    public float TransitionTime = 0.5f;
+    private Camera Cam;
+
+    //private bool IsNight = false;
+    //private bool ChangingTime = false;
+    //public float TransitionTime = 0.5f;
+
+    private void Start()
+    {
+        Cam = GetComponent<Camera>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -31,11 +40,20 @@ public class CameraBehaviour : MonoBehaviour
             }
 
         }
-
+        DockingPoints.Clear();
 
         
+        if (GameManager.IsNight())
+        {
+            // Night
+            Cam.backgroundColor = Color.black;
+        }
+        else
+        {
+            // Day
+            Cam.backgroundColor = Color.grey;
+        }
 
-        DockingPoints.Clear();
     }
 
     void ChangeFollowObject(GameObject o)

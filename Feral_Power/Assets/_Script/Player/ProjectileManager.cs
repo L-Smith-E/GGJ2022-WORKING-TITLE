@@ -6,6 +6,7 @@ public class ProjectileManager : MonoBehaviour
 {
     public List<GameObject> ProjectilePrefab;
     public int ProjectileCount;
+    public int InactiveProjectile;
 
     [SerializeField]
     private List<ProjectileBehaviour> Projectile;
@@ -32,6 +33,7 @@ public class ProjectileManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        int Inactive = 0;
         IsNight = GameManager.IsNight();
         foreach (ProjectileBehaviour p in Projectile)
         {
@@ -52,7 +54,12 @@ public class ProjectileManager : MonoBehaviour
                     p.ResetExistTime();
                 }
             }
+            else
+            {
+                Inactive++;
+            }
         }
+        InactiveProjectile = Inactive;
     }
     public void SpawnProjectile(Vector2 StartPos, Vector2 Dir)
     {
@@ -88,13 +95,14 @@ public class ProjectileManager : MonoBehaviour
                 p.transform.rotation = Quaternion.FromToRotation(transform.up, Dir) * transform.rotation;
 
                 p.StartingPos = StartPos;
-                p.ProjectileSpeed = 20;
                 p.Dir = Dir;
                 p.ResetExistTime();
+
                 return 0;
             }
 
         }
+        
         return 1;
     }
     private void CreateBullets()
@@ -110,5 +118,6 @@ public class ProjectileManager : MonoBehaviour
                 TempProjectile.SetActive(false);
             }
         }
+        InactiveProjectile = ProjectileCount;
     }
 }

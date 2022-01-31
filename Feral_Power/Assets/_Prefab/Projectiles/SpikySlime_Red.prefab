@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9217082820025406649}
   - component: {fileID: -3634562176250781286}
   - component: {fileID: -7127560558104286790}
+  - component: {fileID: 4020751612736071479}
   - component: {fileID: 5153157116399738747}
   m_Layer: 8
   m_Name: SpikySlime_Red
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3390405646756319923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3390405646756319923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae1cb34eba5adc4a88b26196af967bb, type: 3}
   m_Name: 
@@ -121,7 +122,28 @@ MonoBehaviour:
   StartingPos: {x: 0, y: 0}
   Dir: {x: 0, y: 0}
   ProjectileSpeed: 20
-  Damage: 0
+  Damage: 1
+  IgnoreTagList:
+  - Enemy
+  - EnemyProjectile
+  IgnoreLayer: 0800000009000000
+  ExistTimer: 0
+--- !u!114 &4020751612736071479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390405646756319923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ac381003e146448a4023b072caaace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingPos: {x: 0, y: 0}
+  Dir: {x: 0, y: 0}
+  ProjectileSpeed: 20
+  Damage: 1
   IgnoreTagList:
   - Enemy
   - EnemyProjectile
