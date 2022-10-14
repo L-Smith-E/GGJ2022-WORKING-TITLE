@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 958
       height: 885
-    spriteID: 8eb604c80a3d36c4fba332e6bf24b02a
+    spriteID: efabf16de86657d479638f84f0f49f79
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: 3D_Eye_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 8eb604c80a3d36c4fba332e6bf24b02a
+    spriteID: efabf16de86657d479638f84f0f49f79
     layerID: 927
     mosaicPosition: {x: 4, y: 4}
   characterData:

@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 965
       height: 925
-    spriteID: a3bc3715363e453409fa8db1fe1ea62e
+    spriteID: 39a30373feff51e428b667628cbdd702
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -124,7 +124,7 @@ ScriptedImporter:
       y: 937
       width: 965
       height: 925
-    spriteID: a52fa0bcf60fe994084fe696bf88c7d0
+    spriteID: 2761284fb0e8c024b83ca9dba16571cd
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -158,14 +158,14 @@ ScriptedImporter:
     spriteName: 'Path_Tile '
     isGroup: 0
     parentIndex: -1
-    spriteID: a3bc3715363e453409fa8db1fe1ea62e
+    spriteID: 39a30373feff51e428b667628cbdd702
     layerID: 924
     mosaicPosition: {x: 4, y: 4}
   - name: 3D_Path_Tile
     spriteName: 3D_Path_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: a52fa0bcf60fe994084fe696bf88c7d0
+    spriteID: 2761284fb0e8c024b83ca9dba16571cd
     layerID: 926
     mosaicPosition: {x: 4, y: 937}
   characterData:

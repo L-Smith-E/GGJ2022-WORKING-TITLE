@@ -12,6 +12,14 @@ public class EntityHealthBehaviour : MonoBehaviour
     // It's call I-FRAME for a reason
     public int IFrameDuration = 30;
     private int FrameSinceDamage = 0;
+
+    private void Awake()
+    {
+        if (CurrentHealth > MaxHealth)
+        {
+            MaxHealth = CurrentHealth;
+        }
+    }
     private void FixedUpdate()
     {
         if(FrameSinceDamage >= IFrameDuration)

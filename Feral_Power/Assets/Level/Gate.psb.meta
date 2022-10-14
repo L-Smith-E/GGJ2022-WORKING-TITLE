@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 378
       width: 220
       height: 44
-    spriteID: e762eaa2fb25ccb4aa9b078bcbc438ef
+    spriteID: 0b195e55dc0ccf24689f0dc3cbdd3ccd
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -124,7 +124,7 @@ ScriptedImporter:
       y: 293
       width: 220
       height: 77
-    spriteID: 292af762552008740980c3204d9c3caa
+    spriteID: fad9808e452423043a776589ed659cfa
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -146,7 +146,7 @@ ScriptedImporter:
       y: 164
       width: 220
       height: 121
-    spriteID: f2f8810bc3cdfc049bc3cab7236a8bc1
+    spriteID: 10bd780bf5b0b97458b70e6e055e5b6b
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
       y: 4
       width: 220
       height: 152
-    spriteID: 2920016274ffdfb44afd9439915de1a8
+    spriteID: 77739263116660c4ba66576d430513aa
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -202,28 +202,28 @@ ScriptedImporter:
     spriteName: Gate_3
     isGroup: 0
     parentIndex: -1
-    spriteID: e762eaa2fb25ccb4aa9b078bcbc438ef
+    spriteID: 0b195e55dc0ccf24689f0dc3cbdd3ccd
     layerID: 744
     mosaicPosition: {x: 4, y: 378}
   - name: Gate_2
     spriteName: Gate_2
     isGroup: 0
     parentIndex: -1
-    spriteID: 292af762552008740980c3204d9c3caa
+    spriteID: fad9808e452423043a776589ed659cfa
     layerID: 743
     mosaicPosition: {x: 4, y: 293}
   - name: Gate_1
     spriteName: Gate_1
     isGroup: 0
     parentIndex: -1
-    spriteID: f2f8810bc3cdfc049bc3cab7236a8bc1
+    spriteID: 10bd780bf5b0b97458b70e6e055e5b6b
     layerID: 742
     mosaicPosition: {x: 4, y: 164}
   - name: Gate_0
     spriteName: Gate_0
     isGroup: 0
     parentIndex: -1
-    spriteID: 2920016274ffdfb44afd9439915de1a8
+    spriteID: 77739263116660c4ba66576d430513aa
     layerID: 739
     mosaicPosition: {x: 4, y: 4}
   characterData:

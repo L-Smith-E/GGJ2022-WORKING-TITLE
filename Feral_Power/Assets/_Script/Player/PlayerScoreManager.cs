@@ -48,11 +48,6 @@ public class PlayerScoreManager : MonoBehaviour
         CurrentMultiplier = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            HitEvent();
-    }
     private void FixedUpdate()
     {
 

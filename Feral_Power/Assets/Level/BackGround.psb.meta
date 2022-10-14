@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 5059
       height: 3888
-    spriteID: d53f71270bc789446bfac2e7474140ac
+    spriteID: f3d70205bee897e4695ed5873ba7cdb2
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: BackGround
     isGroup: 0
     parentIndex: -1
-    spriteID: d53f71270bc789446bfac2e7474140ac
+    spriteID: f3d70205bee897e4695ed5873ba7cdb2
     layerID: 741
     mosaicPosition: {x: 4, y: 4}
   characterData:

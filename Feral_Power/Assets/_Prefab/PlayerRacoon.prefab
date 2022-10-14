@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2519376064321212425}
   - component: {fileID: -2409513843108164947}
   - component: {fileID: -5475363695338627397}
+  - component: {fileID: -394742545821851608}
   m_Layer: 3
   m_Name: PlayerRacoon
   m_TagString: Player
@@ -113,7 +114,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3015008839343239143, guid: 98fde87dc8716f94b9510b1c29223ea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,9 +159,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerProjectileManager: {fileID: 0}
   IsNight: 0
-  MoveSpeed: 70
+  MoveSpeed: 50
   Horizontal: 0
   Vertical: 0
+  FacingDir: {x: 0, y: 0}
+  PrevFacingDir: {x: 0, y: 0}
   DashForce: 0
   DashCoolDownTime: 1
 --- !u!114 &-2409513843108164947
@@ -175,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97e10821da3934b8b77b3e128ffc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 10
-  MaxHealth: 10
+  CurrentHealth: 5
+  MaxHealth: 5
   IFrame: 0
   IFrameDuration: 30
 --- !u!114 &-5475363695338627397
@@ -191,3 +194,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1be3e0b70ea013418d7bda9b5eec4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-394742545821851608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532316745511538412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f23eb4d91747ab54c881066d46f2a45b, type: 3}
+  m_NotificationBehavior: 1
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

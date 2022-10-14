@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 2530
       height: 2427
-    spriteID: db3721578871039428ad35c00d14ea15
+    spriteID: 4c4389f7ce09ba4439a3d055acfd32d6
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: 3D_BrickWall_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: db3721578871039428ad35c00d14ea15
+    spriteID: 4c4389f7ce09ba4439a3d055acfd32d6
     layerID: 741
     mosaicPosition: {x: 4, y: 4}
   characterData:

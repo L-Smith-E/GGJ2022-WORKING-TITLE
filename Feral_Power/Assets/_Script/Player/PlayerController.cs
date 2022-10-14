@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(PlayerInput))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     public ProjectileManager PlayerProjectileManager;
     private Rigidbody2D RB;
     private SpriteRenderer SR;
     private Animator m_animator;
-    Vector2 moveDirection;
 
     [SerializeField]
     private bool IsNight = false;
@@ -24,6 +26,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float Vertical;
 
+    [SerializeField]
+    private Vector2 FacingDir;
+
+    [SerializeField]
+    private Vector2 PrevFacingDir;
+
+    private Vector2 AimDirection;
 
     [Header("Dash")]
     public float DashForce = 100.0f;
@@ -45,140 +54,73 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         DashTimer += Time.deltaTime;
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
 
-        if (Input.GetMouseButtonDown(0) && !IsNight)
+        // Get the Direction the player is facing
+        var currentfacing = RB.velocity.normalized;
+        if (currentfacing != Vector2.zero)
+            PrevFacingDir = currentfacing;
+
+        m_animator.SetFloat("Horizontal", PrevFacingDir.y);
+        m_animator.SetFloat("Vertical", PrevFacingDir.x);
+
+        float speed = RB.velocity.magnitude;
+        m_animator.SetFloat("Speed", speed);
+
+        SR.flipX = false;
+        if (PrevFacingDir.x >= 1)
         {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 heading = mouseWorldPos - RB.position;
-            float distance = heading.magnitude;
-            Vector2 dir = heading / distance;
-
-            if (PlayerProjectileManager != null)
-                PlayerProjectileManager.RecycleProjectile((RB.position + (dir * 1.5f)), dir);
-        }
-
-        //Movement
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    transform.Translate(Vector2.left * MoveSpeed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    transform.Translate(Vector2.down * MoveSpeed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    transform.Translate(Vector2.up * MoveSpeed * Time.deltaTime);
-        //}
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            //IsNight = !IsNight;
-            //PlayerProjectileManager.DayNightCycle(IsNight);
-
-            GameManager.TimeChange();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && DashTimer >= DashCoolDownTime)
-        {
-            DashNextFrame = true;
-        }
-
-        //IDLE Animation
-        //if (Horizontal == 0 && Vertical == 0 && DashForce == 0)
-        //{
-        //    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.IDLE_UP);
-        //}
-
-        //No Vertical Input
-        //Move Left
-        if (Input.GetKey(KeyCode.A))
-        {
-            SR.flipX = false;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
-            Debug.Log("Walkleft");
-        }
-        //Move Right
-        else if (Input.GetKey(KeyCode.D))
-        {
+            //Going Right
             SR.flipX = true;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_LEFT);
-            Debug.Log("Walkright");
         }
-
-
-        //Move Straight Down
-        if (Input.GetKey(KeyCode.S))
-        {
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN);
-            Debug.Log("WalkDown");
-            Debug.Log("Vertical Value:" + Vertical);
-        }
-        //Move Straight Up
-        else if (Input.GetKey(KeyCode.W))
-        {
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP);
-            Debug.Log("Walkup");
-        }
-
-        //Move Up Left
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
-        {
-            SR.flipX = false;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
-            Debug.Log("Walkupleft");
-        }
-        //Move Up Right
-        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
-        {
-            SR.flipX = true;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_UP_LEFT);
-            Debug.Log("Walkupright");
-        }
-
-        //Move Down Left
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-        {
-            SR.flipX = true;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
-            Debug.Log("WalkDownleft");
-        }
-        //Move Down Right
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
-        {
-            SR.flipX = false;
-            m_animator.SetInteger("AnimState", (int)PlayerAnimationType.WALK_DOWN_LEFT);
-            Debug.Log("WalkDownRight");
-        }
-
-        //DASHES
-
     }
 
 
 
     private void FixedUpdate()
     {
-        IsNight = GameManager.IsNight();
-        RB.velocity = new Vector2(Horizontal * MoveSpeed, Vertical * MoveSpeed);
-
+        RB.velocity = FacingDir * MoveSpeed;
 
         if (DashNextFrame)
         {
             if (RB.bodyType == RigidbodyType2D.Kinematic)
                 RB.velocity = new Vector2(Horizontal * DashForce, Vertical * DashForce);
             else if (RB.bodyType == RigidbodyType2D.Dynamic)
-                RB.AddForce(new Vector2(Horizontal * DashForce, Vertical * DashForce), ForceMode2D.Impulse);
+               RB.AddForce(new Vector2(Horizontal * DashForce, Vertical * DashForce), ForceMode2D.Impulse);
             DashNextFrame = false;
             DashTimer = 0;
         }
 
+    }
+
+    public void OnMovement(InputValue var)
+    {
+        if(var.Get<Vector2>().GetType() == typeof(Vector2))
+            FacingDir = var.Get<Vector2>();
+    }
+
+    public void OnAttack()
+    {
+        if (!GameManager.IsNight())
+        {
+            if (PlayerProjectileManager != null)
+                PlayerProjectileManager.RecycleProjectile((RB.position + (AimDirection * 1.5f)), AimDirection);
+        }
+    }
+
+    public void OnUpdateAimPos(InputValue var)
+    {
+        if (var.Get<Vector2>().GetType() == typeof(Vector2))
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(var.Get<Vector2>());
+            Vector2 heading = mouseWorldPos - RB.position;
+            float distance = heading.magnitude;
+            AimDirection = heading / distance;
+        }
+    }
+
+    public void OnTimeChange()
+    {
+        GameManager.TimeChange();
     }
 }
 

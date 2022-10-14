@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 948
       height: 820
-    spriteID: 6abe07b9e8ab2074a882e21e67ac72cc
+    spriteID: 85847a8a6d86e374aa32f4bc4e5c5692
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -124,7 +124,7 @@ ScriptedImporter:
       y: 832
       width: 948
       height: 820
-    spriteID: 4224866b4b38b9649a3d61fd431d6ce9
+    spriteID: ffefa8959c0d80b448b10392712f0a94
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -146,7 +146,7 @@ ScriptedImporter:
       y: 4
       width: 952
       height: 823
-    spriteID: 3dba5f649fd832549a6cecabe4bb4fcc
+    spriteID: 3e2659c133625c64cadb157ff8de1177
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
       y: 835
       width: 952
       height: 823
-    spriteID: 74c797028193f69489cf2fda8a3c0872
+    spriteID: 101ef23e855f40042a979d11f6d6b2d8
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -202,28 +202,28 @@ ScriptedImporter:
     spriteName: rackedStone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 6abe07b9e8ab2074a882e21e67ac72cc
+    spriteID: 85847a8a6d86e374aa32f4bc4e5c5692
     layerID: 908
     mosaicPosition: {x: 964, y: 4}
   - name: Stone_Tile
     spriteName: Stone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 4224866b4b38b9649a3d61fd431d6ce9
+    spriteID: ffefa8959c0d80b448b10392712f0a94
     layerID: 907
     mosaicPosition: {x: 964, y: 832}
   - name: Grass_Flower_Tile
     spriteName: Grass_Flower_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 3dba5f649fd832549a6cecabe4bb4fcc
+    spriteID: 3e2659c133625c64cadb157ff8de1177
     layerID: 906
     mosaicPosition: {x: 4, y: 4}
   - name: Grass_Tile
     spriteName: Grass_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 74c797028193f69489cf2fda8a3c0872
+    spriteID: 101ef23e855f40042a979d11f6d6b2d8
     layerID: 905
     mosaicPosition: {x: 4, y: 835}
   characterData:

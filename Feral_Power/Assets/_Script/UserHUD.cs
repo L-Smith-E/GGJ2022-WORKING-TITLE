@@ -21,10 +21,14 @@ public class UserHUD : MonoBehaviour
     private bool battleStart = false;
 
     [Header("Player Info")]
+    public EntityHealthBehaviour PlayerHealthBehaviour;
     public ProjectileManager PlayerProjectileManager;
     public Text Health;
     public Text ProjectileCount;
 
+    [Header("Boss Info")]
+    public EntityHealthBehaviour BossHealth;
+    public Scrollbar BossHealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -66,10 +70,14 @@ public class UserHUD : MonoBehaviour
             Combo.text  = ScoreManager.CurrentMultiplier.ToString();
         }
 
-
         if (PlayerProjectileManager != null)
         {
             ProjectileCount.text = PlayerProjectileManager.ProjectileCount.ToString() + "/" + PlayerProjectileManager.InactiveProjectile;
+        }
+
+        if(PlayerHealthBehaviour != null)
+        {
+            Health.text = "Health: " + PlayerHealthBehaviour.MaxHealth.ToString() + "/" + PlayerHealthBehaviour.CurrentHealth.ToString();
         }
 
         if(GameManager.IsDay())
@@ -85,6 +93,14 @@ public class UserHUD : MonoBehaviour
             Combo.color = Color.white;
             Health.color = Color.white;
             ProjectileCount.color = Color.red;
+        }
+
+        if(BossHealth != null)
+        {
+            BossHealthBar.size = BossHealth.CurrentHealth / BossHealth.MaxHealth;
+
+            if (BossHealth.CurrentHealth <= 0)
+                BossHealthBar.gameObject.SetActive(false);
         }
     }
 }

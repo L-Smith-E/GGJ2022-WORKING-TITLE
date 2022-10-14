@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 952
       height: 823
-    spriteID: 71bc914d1ac82544e90baf5ae4452fac
+    spriteID: fbd3e8974599c744a9fddc885d30785f
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -124,7 +124,7 @@ ScriptedImporter:
       y: 835
       width: 952
       height: 823
-    spriteID: 8546250b489190d489a4c4a1c1fddefe
+    spriteID: d83e1a26a12917243ad44154f6598815
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -146,7 +146,7 @@ ScriptedImporter:
       y: 4
       width: 948
       height: 820
-    spriteID: c2f9617b3d6dada43b85887025d30e81
+    spriteID: f5bfbd870c7bb9b499339bdc5056b2f5
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
       y: 832
       width: 948
       height: 820
-    spriteID: 536ab403d8168a642ba1532b47ebb7a4
+    spriteID: b5f70f007fdd8dc4bacf33a76b364001
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -202,28 +202,28 @@ ScriptedImporter:
     spriteName: Night_Grass_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 71bc914d1ac82544e90baf5ae4452fac
+    spriteID: fbd3e8974599c744a9fddc885d30785f
     layerID: 911
     mosaicPosition: {x: 4, y: 4}
   - name: Night_Grass_Flower_Tile
     spriteName: Night_Grass_Flower_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 8546250b489190d489a4c4a1c1fddefe
+    spriteID: d83e1a26a12917243ad44154f6598815
     layerID: 912
     mosaicPosition: {x: 4, y: 835}
   - name: Nigh_rackedStone_Tile
     spriteName: Nigh_rackedStone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: c2f9617b3d6dada43b85887025d30e81
+    spriteID: f5bfbd870c7bb9b499339bdc5056b2f5
     layerID: 913
     mosaicPosition: {x: 964, y: 4}
   - name: Night_Stone_Tile
     spriteName: Night_Stone_Tile
     isGroup: 0
     parentIndex: -1
-    spriteID: 536ab403d8168a642ba1532b47ebb7a4
+    spriteID: b5f70f007fdd8dc4bacf33a76b364001
     layerID: 914
     mosaicPosition: {x: 964, y: 832}
   characterData:
