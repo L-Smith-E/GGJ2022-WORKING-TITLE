@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5444466567730534265}
   - component: {fileID: 4088037069319925671}
   - component: {fileID: 2290845325985661296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: energyball
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

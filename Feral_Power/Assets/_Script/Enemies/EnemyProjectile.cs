@@ -30,4 +30,16 @@ public class EnemyProjectile : MonoBehaviour
     {
         moveDirection = direction;
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            //ResetExistTime();
+            transform.gameObject.SetActive(false);
+            collision.transform.SendMessage("TakeDamage", 1.0f, SendMessageOptions.DontRequireReceiver);
+            this.SendMessageUpwards("HitEvent", null, SendMessageOptions.DontRequireReceiver);
+            return;
+        }
+    }
 }
